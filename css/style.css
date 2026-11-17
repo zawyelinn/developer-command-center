@@ -1,0 +1,67 @@
+/* =========================
+   1. DESIGN SYSTEM
+========================= */
+
+:root {
+    --bg-primary: #0F172A;
+    --bg-secondary: #111827;
+    --bg-card: #1E293B;
+
+    --color-primary: #6366F1;
+    --color-primary-hover: #4F46E5;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+
+    --border-color: #334155;
+
+    --font-primary: Arial, sans-serif;
+}
+
+
+/* =========================
+   2. GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   3. BODY
+========================= */
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+
+/* =========================
+   4. GLOBAL ELEMENTS
+========================= */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
