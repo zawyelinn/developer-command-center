@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Developer Command Center">
+
+    <title>Developer Command Center</title>
+
+    <!-- CSS Files -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>DevCenter</h2>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <ul>
+                    <li>
+                        <a href="#" class="nav-link active" data-view="dashboard">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link" data-view="tasks">
+                            Tasks
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link" data-view="projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link" data-view="learning">
+                            Learning
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link" data-view="coding">
+                            Coding Tracker
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link" data-view="goals">
+                            Goals
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link" data-view="journal">
+                            Journal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link" data-view="analytics">
+                            Analytics
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#">Settings</a>
+            </div>
+        </aside>
+
+        <!-- Main Area -->
+        <div class="main-wrapper">
+
+            <!-- Header -->
+            <header class="topbar">
+                    <div class="topbar-left">
+                        <div class="page-heading">
+                            <h1>Dashboard</h1>
+                            <p>Welcome back! Here's your development overview.</p>
+                        </div>
+                    </div>
+
+                    <div class="topbar-right">
+                        <div class="current-date">
+                            <span id="current-date">Monday, November 17, 2026</span>
+                        </div>
+
+                        <div class="user-profile">
+                            <div class="user-avatar">Z</div>
+                            <div class="user-info">
+                                <h4>Developer</h4>
+                                <span>Full Stack Developer</span>
+                            </div>
+                        </div>
+                    </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="page-view active" id="dashboard-view">
+                    <!-- Welcome Section -->
+                    <section class="welcome-section">
+                        <div>
+                            <h2>Your Development Overview</h2>
+                            <p>Track your progress and keep building your future.</p>
+                        </div>
+                        <button id="add-task-btn">+ Add New Task</button>
+                    </section>
+
+                    <!-- Statistics Section -->
+                    <section class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Total Tasks</h3>
+                            <p id="total-tasks">0</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Completed Tasks</h3>
+                            <p id="completed-tasks">0</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Active Projects</h3>
+                            <p id="active-projects">0</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Coding Hours</h3>
+                            <p id="coding-hours">0h</p>
+                        </div>
+                    </section>
+
+                    <!-- Recent Tasks Section -->
+                    <section class="dashboard-section">
+                        <div class="section-heading">
+                            <h2>Recent Tasks</h2>
+                            <a href="#">View All</a>
+                        </div>
+
+                        <div id="recent-tasks">
+                            <p>No tasks available yet.</p>
+                        </div>
+                    </section>
+
+                    <!-- Projects Section -->
+                    <section class="dashboard-section">
+                        <div class="section-heading">
+                            <h2>My Projects</h2>
+                            <a href="#">View All</a>
+                        </div>
+
+                        <div id="recent-projects">
+                            <p>No projects available yet.</p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Task Manager View -->
+                <div class="page-view" id="tasks-view">
+
+                    <section class="page-header">
+                        <div>
+                            <h2>Task Manager</h2>
+                            <p>Organize your work and track your progress.</p>
+                        </div>
+                    </section>
+
+                    <!-- Create Task Form -->
+                    <section class="task-form-section">
+                        <h3>Create New Task</h3>
+
+                        <form id="task-form">
+
+                            <div class="form-group">
+                                <label for="task-title">Task Title</label>
+                                <input
+                                    type="text"
+                                    id="task-title"
+                                    placeholder="Enter task title"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="task-description">Description</label>
+                                <textarea
+                                    id="task-description"
+                                    placeholder="Describe your task"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label for="task-priority">Priority</label>
+                                    <select id="task-priority">
+                                        <option value="low">Low</option>
+                                        <option value="medium" selected>Medium</option>
+                                        <option value="high">High</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="task-due-date">Due Date</label>
+                                    <input type="date" id="task-due-date">
+                                </div>
+
+                            </div>
+
+                            <button type="submit">Create Task</button>
+
+                        </form>
+                    </section>
+
+                    <!-- Task List -->
+                    <section class="task-list-section">
+                        <div class="section-heading">
+                            <h3>My Tasks</h3>
+                            <span id="task-count">0 Tasks</span>
+                        </div>
+
+                        <div id="task-list">
+                            <p>No tasks created yet.</p>
+                        </div>
+                    </section>
+
+                </div>
+                <!-- Project Manager View -->
+                <div class="page-view" id="projects-view">
+
+                    <section class="page-header">
+                        <div>
+                            <h2>Project Manager</h2>
+                            <p>Manage your projects and monitor development progress.</p>
+                        </div>
+                    </section>
+
+                    <!-- Create Project Form -->
+                    <section class="project-form-section">
+                        <h3>Create New Project</h3>
+
+                        <form id="project-form">
+
+                            <div class="form-group">
+                                <label for="project-name">Project Name</label>
+                                <input
+                                    type="text"
+                                    id="project-name"
+                                    placeholder="Enter project name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-description">Description</label>
+                                <textarea
+                                    id="project-description"
+                                    placeholder="Describe your project"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label for="project-start-date">Start Date</label>
+                                    <input type="date" id="project-start-date">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="project-deadline">Deadline</label>
+                                    <input type="date" id="project-deadline">
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-status">Project Status</label>
+                                <select id="project-status">
+                                    <option value="planning">Planning</option>
+                                    <option value="in-progress">In Progress</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="on-hold">On Hold</option>
+                                </select>
+                            </div>
+
+                            <button type="submit">Create Project</button>
+
+                        </form>
+                    </section>
+
+                    <!-- Project List -->
+                    <section class="project-list-section">
+
+                        <div class="section-heading">
+                            <h3>My Projects</h3>
+                            <span id="project-count">0 Projects</span>
+                        </div>
+
+                        <div id="project-list">
+                            <p>No projects created yet.</p>
+                        </div>
+
+                    </section>
+
+                </div>
+                <!-- Learning Center View -->
+                <div class="page-view" id="learning-view">
+
+                    <section class="page-header">
+                        <div>
+                            <h2>Learning Center</h2>
+                            <p>Build skills. Expand knowledge. Keep improving.</p>
+                        </div>
+                    </section>
+
+                    <!-- Learning Overview -->
+                    <section class="stats-grid">
+
+                        <div class="stat-card">
+                            <h3>Total Skills</h3>
+                            <p id="total-skills">0</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Learning Paths</h3>
+                            <p id="learning-paths">0</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Completed Lessons</h3>
+                            <p id="completed-lessons">0</p>
+                        </div>
+
+                    </section>
+
+                    <!-- Add Learning Path -->
+                    <section class="learning-form-section">
+                        <h3>Create Learning Path</h3>
+
+                        <form id="learning-form">
+
+                            <div class="form-group">
+                                <label for="learning-title">Learning Path Name</label>
+                                <input
+                                    type="text"
+                                    id="learning-title"
+                                    placeholder="e.g. Full Stack JavaScript"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="learning-category">Category</label>
+                                <select id="learning-category">
+                                    <option value="frontend">Frontend</option>
+                                    <option value="backend">Backend</option>
+                                    <option value="database">Database</option>
+                                    <option value="devops">DevOps</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <button type="submit">Create Learning Path</button>
+
+                        </form>
+                    </section>
+
+                    <!-- Learning Path List -->
+                    <section class="learning-list-section">
+
+                        <div class="section-heading">
+                            <h3>My Learning Paths</h3>
+                        </div>
+
+                        <div id="learning-list">
+                            <p>No learning paths created yet.</p>
+                        </div>
+
+                    </section>
+
+                </div>
+                <!-- Coding Tracker View -->
+                <div class="page-view" id="coding-view">
+
+                    <section class="page-header">
+                        <div>
+                            <h2>Coding Tracker</h2>
+                            <p>Track your coding time and build consistency.</p>
+                        </div>
+                    </section>
+
+                    <!-- Coding Statistics -->
+                    <section class="stats-grid">
+
+                        <div class="stat-card">
+                            <h3>Total Coding Hours</h3>
+                            <p id="total-coding-hours">0h</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Today's Coding</h3>
+                            <p id="today-coding-hours">0h</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Total Sessions</h3>
+                            <p id="total-sessions">0</p>
+                        </div>
+
+                    </section>
+
+                    <!-- Coding Timer -->
+                    <section class="timer-section">
+
+                        <h3>Coding Timer</h3>
+
+                        <div class="timer-display">
+                            <span id="timer-display">00:00:00</span>
+                        </div>
+
+                        <div class="timer-controls">
+                            <button type="button" id="start-timer">Start</button>
+                            <button type="button" id="pause-timer">Pause</button>
+                            <button type="button" id="reset-timer">Reset</button>
+                        </div>
+
+                    </section>
+
+                    <!-- Coding Session History -->
+                    <section class="coding-history-section">
+
+                        <div class="section-heading">
+                            <h3>Coding History</h3>
+                        </div>
+
+                        <div id="coding-history">
+                            <p>No coding sessions recorded yet.</p>
+                        </div>
+
+                    </section>
+
+                </div>
+                <!-- Goal Manager View -->
+                <div class="page-view" id="goals-view">
+
+                    <section class="page-header">
+                        <div>
+                            <h2>Goal Manager</h2>
+                            <p>Set clear goals and turn them into achievements.</p>
+                        </div>
+                    </section>
+
+                    <!-- Create Goal -->
+                    <section class="goal-form-section">
+
+                        <h3>Create New Goal</h3>
+
+                        <form id="goal-form">
+
+                            <div class="form-group">
+                                <label for="goal-title">Goal Title</label>
+                                <input
+                                    type="text"
+                                    id="goal-title"
+                                    placeholder="e.g. Become a Full Stack Developer"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="goal-description">Description</label>
+                                <textarea
+                                    id="goal-description"
+                                    placeholder="Describe your goal"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label for="goal-type">Goal Type</label>
+                                    <select id="goal-type">
+                                        <option value="short-term">Short Term</option>
+                                        <option value="long-term">Long Term</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="goal-deadline">Target Date</label>
+                                    <input type="date" id="goal-deadline">
+                                </div>
+
+                            </div>
+
+                            <button type="submit">Create Goal</button>
+
+                        </form>
+
+                    </section>
+
+                    <!-- Goal List -->
+                    <section class="goal-list-section">
+
+                        <div class="section-heading">
+                            <h3>My Goals</h3>
+                        </div>
+
+                        <div id="goal-list">
+                            <p>No goals created yet.</p>
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- Daily Journal View -->
+                <div class="page-view" id="journal-view">
+
+                    <section class="page-header">
+                        <div>
+                            <h2>Daily Journal</h2>
+                            <p>Reflect on your day, record your thoughts and improve.</p>
+                        </div>
+                    </section>
+
+                    <!-- Journal Form -->
+                    <section class="journal-form-section">
+
+                        <h3>Today's Journal</h3>
+
+                        <form id="journal-form">
+
+                            <div class="form-group">
+                                <label for="journal-date">Date</label>
+                                <input type="date" id="journal-date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="journal-title">Title</label>
+                                <input
+                                    type="text"
+                                    id="journal-title"
+                                    placeholder="Give your day a title"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="journal-content">Your Thoughts</label>
+                                <textarea
+                                    id="journal-content"
+                                    placeholder="What did you learn today? What went well? What can you improve?"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button type="submit">Save Journal</button>
+
+                        </form>
+
+                    </section>
+
+                    <!-- Journal History -->
+                    <section class="journal-history-section">
+
+                        <div class="section-heading">
+                            <h3>Journal History</h3>
+                        </div>
+
+                        <div id="journal-list">
+                            <p>No journal entries yet.</p>
+                        </div>
+
+                    </section>
+
+                </div>
+                <!-- Analytics View -->
+                <div class="page-view" id="analytics-view">
+
+                    <section class="page-header">
+                        <div>
+                            <h2>Analytics</h2>
+                            <p>Analyze your productivity and measure your growth.</p>
+                        </div>
+                    </section>
+
+                    <!-- Overall Statistics -->
+                    <section class="stats-grid">
+
+                        <div class="stat-card">
+                            <h3>Tasks Completed</h3>
+                            <p id="analytics-completed-tasks">0</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Projects Completed</h3>
+                            <p id="analytics-completed-projects">0</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Total Coding Hours</h3>
+                            <p id="analytics-coding-hours">0h</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <h3>Goals Achieved</h3>
+                            <p id="analytics-completed-goals">0</p>
+                        </div>
+
+                    </section>
+
+                    <!-- Weekly Report -->
+                    <section class="analytics-section">
+
+                        <div class="section-heading">
+                            <h3>Weekly Coding Activity</h3>
+                        </div>
+
+                        <div id="weekly-analytics">
+                            <p>No activity data available yet.</p>
+                        </div>
+
+                    </section>
+
+                    <!-- Productivity Summary -->
+                    <section class="analytics-section">
+
+                        <div class="section-heading">
+                            <h3>Productivity Summary</h3>
+                        </div>
+
+                        <div id="productivity-summary">
+                            <p>Your productivity summary will appear here.</p>
+                        </div>
+
+                    </section>
+
+                </div>
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript Files -->
+
+        <script src="js/storage.js"></script>
+        <script src="js/dashboard.js"></script>
+        <script src="js/tasks.js"></script>
+        <script src="js/projects.js"></script>
+        <script src="js/learning.js"></script>
+        <script src="js/timer.js"></script>
+        <script src="js/app.js"></script>
+</body>
+</html>
